@@ -26,319 +26,113 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     .font-inter { font-family: 'Inter', sans-serif; }
-    .tiktok-red { background:#FF0050; } .tiktok-cyan { background:#25F4EE; } .tiktok-black{background:#000}
     .tiktok-gradient{background:linear-gradient(135deg,#FF0050 0%,#FE2C55 50%,#FF0050 100%)}
     .tiktok-gradient-cyan{background:linear-gradient(135deg,#25F4EE 0%,#00E6CC 50%,#25F4EE 100%)}
-    .btn-tiktok{background:linear-gradient(135deg,#FF0050,#FE2C55);transition:.3s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 20px rgba(255,0,80,.3)}
-    .btn-tiktok:hover{background:linear-gradient(135deg,#FE2C55,#FF0050);transform:translateY(-3px);box-shadow:0 8px 30px rgba(255,0,80,.4)}
-    .btn-cyan{background:linear-gradient(135deg,#25F4EE,#00E6CC);transition:.3s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 20px rgba(37,244,238,.3)}
-    .btn-cyan:hover{background:linear-gradient(135deg,#00E6CC,#25F4EE);transform:translateY(-3px);box-shadow:0 8px 30px rgba(37,244,238,.4)}
-    .floating-logo{animation:floatingLogo 4s ease-in-out infinite}
-    @keyframes floatingLogo{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-20px) rotate(5deg)}}
-    .glow-tiktok{box-shadow:0 0 30px rgba(255,0,80,.5)} .glow-cyan{box-shadow:0 0 30px rgba(37,244,238,.5)}
-    .input-tiktok:focus{border-color:#FF0050;box-shadow:0 0 20px rgba(255,0,80,.2)}
-    .loading-tiktok{width:28px;height:28px;border:3px solid rgba(255,0,80,.3);border-top:3px solid #FF0050;border-radius:50%;animation:spin 1s linear infinite}
-    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
-    .tiktok-pattern{background-image:radial-gradient(circle at 20% 20%,rgba(255,0,80,.1) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(37,244,238,.1) 0%,transparent 50%)}
-    .feature-card{transition:.4s cubic-bezier(.4,0,.2,1);border:2px solid transparent}
+    .btn-tiktok{background:linear-gradient(135deg,#FF0050,#FE2C55);transition:.3s;box-shadow:0 4px 20px rgba(255,0,80,.3)}
+    .btn-tiktok:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(255,0,80,.4)}
+    .btn-cyan{background:linear-gradient(135deg,#25F4EE,#00E6CC);transition:.3s;box-shadow:0 4px 20px rgba(37,244,238,.3)}
+    .btn-cyan:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(37,244,238,.4)}
+    .feature-card{transition:.4s;border:2px solid transparent}
     .feature-card:hover{transform:translateY(-10px) scale(1.02);border-color:#FF0050;box-shadow:0 20px 40px rgba(255,0,80,.2)}
-    .success-pulse{animation:successPulse .8s ease-out}
-    @keyframes successPulse{0%{transform:scale(.8);opacity:0}50%{transform:scale(1.05);opacity:.8}100%{transform:scale(1);opacity:1}}
-    @media (max-width:768px){.mobile-padding{padding:1rem}.mobile-text{font-size:1.5rem}}
-    .music-note{animation:musicFloat 3s ease-in-out infinite}
-    @keyframes musicFloat{0%,100%{transform:translateY(0) rotate(0);opacity:.7}50%{transform:translateY(-15px) rotate(10deg);opacity:1}}
-    .neon-text{text-shadow:0 0 5px #FF0050,0 0 10px #FF0050,0 0 20px #FF0050,0 0 40px #FF0050}
   </style>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7987172752857564" crossorigin="anonymous"></script>
 </head>
 <body class="font-inter bg-black text-white min-h-screen">
 
-  <!-- Nav -->
-  <nav class="bg-black/95 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-4">
-          <div class="relative">
-            <div class="w-12 h-12 tiktok-gradient rounded-2xl flex items-center justify-center floating-logo">
-              <i class="fab fa-tiktok text-white text-2xl"></i>
-            </div>
-            <div class="absolute -top-1 -right-1 w-4 h-4 bg-cyan-400 rounded-full music-note">
-              <i class="fas fa-music text-xs text-black"></i>
-            </div>
-          </div>
-          <div>
-            <h1 class="text-2xl font-bold text-white">TikDownloader</h1>
-            <p class="text-xs text-gray-400">Free & Fast</p>
-          </div>
+  <!-- NAV -->
+  <nav class="bg-black border-b border-gray-800 sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 tiktok-gradient rounded-2xl flex items-center justify-center">
+          <i class="fab fa-tiktok text-white text-2xl"></i>
         </div>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#home" class="text-gray-300 hover:text-cyan-400 font-medium transition">Ana Sayfa</a>
-          <a href="#download" class="text-gray-300 hover:text-cyan-400 font-medium transition">İndir</a>
-          <a href="#features" class="text-gray-300 hover:text-cyan-400 font-medium transition">Özellikler</a>
-          <button class="btn-cyan text-black px-6 py-2 rounded-full font-semibold"><i class="fas fa-star mr-2"></i>Ücretsiz</button>
-        </div>
-        <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+        <h1 class="text-2xl font-bold">TikDownloader</h1>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="hover:text-cyan-400">Ana Sayfa</a>
+        <a href="#download" class="hover:text-cyan-400">İndir</a>
+        <a href="#features" class="hover:text-cyan-400">Özellikler</a>
+        <button class="btn-cyan text-black px-4 py-2 rounded-full">Ücretsiz</button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center tiktok-pattern overflow-hidden">
-    <div class="absolute top-20 left-10 music-note"><i class="fas fa-music text-4xl text-cyan-400 opacity-30"></i></div>
-    <div class="absolute top-40 right-20 music-note" style="animation-delay:-1s"><i class="fas fa-heart text-3xl text-red-400 opacity-30"></i></div>
-    <div class="absolute bottom-40 left-1/4 music-note" style="animation-delay:-2s"><i class="fas fa-star text-2xl text-yellow-400 opacity-30"></i></div>
-
-    <div class="container mx-auto px-6 text-center">
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-8">
-          <div class="relative inline-block">
-            <div class="w-24 h-24 tiktok-gradient rounded-3xl flex items-center justify-center floating-logo glow-tiktok">
-              <i class="fab fa-tiktok text-white text-4xl"></i>
-            </div>
-          </div>
-        </div>
-
-        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-          <span class="text-white">TikTok</span> <span class="neon-text">Downloader</span>
-        </h1>
-
-        <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          TikTok videolarını <span class="text-cyan-400 font-bold">watermark olmadan</span> ve
-          <span class="text-red-400 font-bold">ücretsiz</span> olarak indirin
-        </p>
-
-        <div class="flex justify-center space-x-4 mb-16">
-          <button onclick="scrollToDownload()" class="btn-tiktok text-white px-8 py-4 rounded-full font-bold text-lg"><i class="fas fa-download mr-3"></i>Hemen İndir</button>
-          <button class="bg-white/10 text-white px-8 py-4 rounded-full font-bold text-lg border border-gray-600 hover:bg-white/20 transition"><i class="fas fa-play mr-3"></i>Nasıl Çalışır</button>
-        </div>
-
-        <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-          <div class="text-center"><div class="text-3xl md:text-4xl font-black text-cyan-400 mb-2">250K+</div><div class="text-gray-400 text-sm">İndirilen Video</div></div>
-          <div class="text-center"><div class="text-3xl md:text-4xl font-black text-red-400 mb-2">⚡</div><div class="text-gray-400 text-sm">Süper Hızlı</div></div>
-          <div class="text-center"><div class="text-3xl md:text-4xl font-black text-yellow-400 mb-2">100%</div><div class="text-gray-400 text-sm">Ücretsiz</div></div>
-        </div>
-      </div>
+  <!-- HERO -->
+  <section id="home" class="min-h-screen flex items-center justify-center text-center">
+    <div>
+      <h1 class="text-6xl font-bold mb-4">TikTok Downloader</h1>
+      <p class="text-gray-300 text-xl">TikTok videolarını filigransız ve ücretsiz indir</p>
     </div>
   </section>
 
-  <!-- Download -->
-  <section id="download" class="py-20 bg-gradient-to-br from-black to-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Video <span class="text-cyan-400">İndirme</span> Merkezi</h2>
-          <p class="text-xl text-gray-300">TikTok video linkini yapıştırın ve saniyeler içinde indirin</p>
-        </div>
+  <!-- DOWNLOAD -->
+  <section id="download" class="py-20 bg-gradient-to-br from-black to-gray-900 text-center">
+    <h2 class="text-4xl font-bold mb-6">Video İndirme Merkezi</h2>
+    <input type="url" placeholder="TikTok linkini yapıştır" class="w-1/2 px-4 py-3 rounded-lg text-black">
+    <button class="btn-tiktok text-white px-6 py-3 rounded-lg ml-2">İndir</button>
+  </section>
 
-        <div class="bg-gray-900/50 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-gray-700 glow-tiktok">
-          <div class="space-y-8">
-            <div class="relative">
-              <label for="videoUrl" class="block text-white font-semibold mb-4 text-lg">
-                <i class="fab fa-tiktok text-red-400 mr-2"></i>TikTok Video Linki
-              </label>
-              <div class="relative">
-                <input type="url" id="videoUrl" required autocomplete="off"
-                  placeholder="https://www.tiktok.com/@username/video/..."
-                  class="w-full px-6 py-5 bg-black/50 border-2 border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:outline-none input-tiktok text-lg">
-                <div class="absolute right-4 top-1/2 -translate-y-1/2"><i class="fas fa-link text-gray-400"></i></div>
-              </div>
-            </div>
-            <button onclick="downloadVideo()" id="downloadBtn" class="btn-tiktok w-full py-5 rounded-2xl font-black text-xl text-white flex items-center justify-center space-x-3">
-              <i class="fas fa-rocket text-2xl"></i><span>Video İndir</span>
-            </button>
-          </div>
-
-          <div id="result" class="mt-8"></div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6 mt-12">
-          <div class="bg-gray-800/50 rounded-2xl p-6 text-center border border-gray-700">
-            <i class="fas fa-copy text-3xl text-cyan-400 mb-4"></i><h4 class="text-lg font-bold text-white mb-2">1. Linki Kopyala</h4><p class="text-gray-400">TikTok'tan video linkini kopyalayın</p>
-          </div>
-          <div class="bg-gray-800/50 rounded-2xl p-6 text-center border border-gray-700">
-            <i class="fas fa-paste text-3xl text-red-400 mb-4"></i><h4 class="text-lg font-bold text-white mb-2">2. Buraya Yapıştır</h4><p class="text-gray-400">Linki yukarıdaki kutucuğa yapıştırın</p>
-          </div>
-          <div class="bg-gray-800/50 rounded-2xl p-6 text-center border border-gray-700">
-            <i class="fas fa-download text-3xl text-yellow-400 mb-4"></i><h4 class="text-lg font-bold text-white mb-2">3. İndir</h4><p class="text-gray-400">Videoyu cihazınıza kaydedin</p>
-          </div>
-        </div>
-      </div>
+  <!-- FEATURES -->
+  <section id="features" class="py-20 bg-black text-center">
+    <h2 class="text-4xl font-bold mb-10">Neden TikDownloader?</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      <div class="feature-card p-6 rounded-lg bg-gray-900">Watermark Yok</div>
+      <div class="feature-card p-6 rounded-lg bg-gray-900">Işık Hızında</div>
+      <div class="feature-card p-6 rounded-lg bg-gray-900">HD Kalite</div>
+      <div class="feature-card p-6 rounded-lg bg-gray-900">100% Güvenli</div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section id="features" class="py-20 bg-black">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h3 class="text-4xl md:text-5xl font-black text-white mb-6">Neden <span class="text-red-400">TikDownloader</span>?</h3>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">En iyi TikTok video indirme deneyimi için tasarlandı</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="feature-card bg-gray-900/50 rounded-3xl p-8 text-center">
-          <div class="w-20 h-20 tiktok-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 glow-tiktok"><i class="fas fa-magic text-white text-3xl"></i></div>
-          <h4 class="text-xl font-bold text-white mb-4">Watermark Yok</h4><p class="text-gray-400">Videolar tamamen temiz, logo ve yazı olmadan</p>
-        </div>
-        <div class="feature-card bg-gray-900/50 rounded-3xl p-8 text-center">
-          <div class="w-20 h-20 tiktok-gradient-cyan rounded-2xl flex items-center justify-center mx-auto mb-6 glow-cyan"><i class="fas fa-bolt text-black text-3xl"></i></div>
-          <h4 class="text-xl font-bold text-white mb-4">Işık Hızında</h4><p class="text-gray-400">Saniyeler içinde video hazır ve indirilebilir</p>
-        </div>
-        <div class="feature-card bg-gray-900/50 rounded-3xl p-8 text-center">
-          <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6"><i class="fas fa-hd-video text-black text-3xl"></i></div>
-          <h4 class="text-xl font-bold text-white mb-4">HD Kalite</h4><p class="text-gray-400">Orijinal kalitede, kayıpsız video indirme</p>
-        </div>
-        <div class="feature-card bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl p-8 text-center">
-          <div class="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"><i class="fas fa-shield-alt text-white text-3xl"></i></div>
-          <h4 class="text-xl font-bold text-white mb-4">100% Güvenli</h4><p class="text-gray-400">Verileriniz korunur, virüs riski yok</p>
-        </div>
-      </div>
+  <!-- NASIL KULLANILIR -->
+  <section id="how" class="py-20 bg-gray-900 text-center">
+    <h2 class="text-4xl font-bold mb-6">Nasıl Kullanılır?</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">TikTok video linkini kopyala, sitemize yapıştır ve tek tıkla indir. Ücretsiz, hızlı ve güvenli.</p>
+  </section>
+
+  <!-- SSS -->
+  <section id="faq" class="py-20 bg-black text-center">
+    <h2 class="text-4xl font-bold mb-6">Sıkça Sorulan Sorular</h2>
+    <div class="max-w-3xl mx-auto text-left text-gray-300 space-y-4">
+      <p><strong>❓ TikTok videolarını indirirken ücret ödeyecek miyim?</strong><br> Hayır, tamamen ücretsiz.</p>
+      <p><strong>❓ Videolarda filigran olacak mı?</strong><br> Hayır, filigransız indirmen mümkün.</p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-black border-t border-gray-800 py-12">
-    <div class="container mx-auto px-6">
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="md:col-span-2">
-          <div class="flex items-center space-x-4 mb-6">
-            <div class="w-12 h-12 tiktok-gradient rounded-2xl flex items-center justify-center"><i class="fab fa-tiktok text-white text-xl"></i></div>
-            <h3 class="text-2xl font-bold text-white">TikDownloader</h3>
-          </div>
-          <p class="text-gray-400 leading-relaxed max-w-md mb-6">TikTok videolarını ücretsiz, hızlı ve güvenli bir şekilde indirin. Watermark yok, kalite kaybı yok.</p>
-          <div class="flex space-x-4"></div>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold text-white mb-6">Hızlı Erişim</h4>
-          <ul class="space-y-3 text-gray-400">
-            <li><a href="#home" class="hover:text-cyan-400 transition">Ana Sayfa</a></li>
-            <li><a href="#download" class="hover:text-cyan-400 transition">Video İndir</a></li>
-            <li><a href="#features" class="hover:text-cyan-400 transition">Özellikler</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-lg font-bold text-white mb-6">Yardım</h4>
-          <ul class="space-y-3 text-gray-400">
-            <li><a href="#" class="hover:text-cyan-400 transition">Nasıl Kullanılır</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">SSS</a></li>
-            <li><a href="#" class="hover:text-cyan-400 transition">Gizlilik</a></li>
-          </ul>
-        </div>
+  <!-- GİZLİLİK -->
+  <section id="privacy" class="py-20 bg-gray-900 text-center">
+    <h2 class="text-4xl font-bold mb-6">Gizlilik Politikası</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">Kullanıcı verilerini saklamıyoruz. Tüm indirme işlemleri güvenli şekilde yapılır.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-12 border-t border-gray-800">
+    <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8 text-gray-400">
+      <div class="md:col-span-2">
+        <h3 class="text-xl font-bold mb-4 text-white">TikDownloader</h3>
+        <p>TikTok videolarını ücretsiz, hızlı ve güvenli indir. Watermark yok, kalite kaybı yok.</p>
       </div>
-      <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-        <p class="text-gray-400">© 2024 TikDownloader.</p>
+      <div>
+        <h4 class="text-lg font-bold text-white mb-4">Hızlı Erişim</h4>
+        <ul>
+          <li><a href="#home" class="hover:text-cyan-400">Ana Sayfa</a></li>
+          <li><a href="#download" class="hover:text-cyan-400">Video İndir</a></li>
+          <li><a href="#features" class="hover:text-cyan-400">Özellikler</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold text-white mb-4">Yardım</h4>
+        <ul>
+          <li><a href="#how" class="hover:text-cyan-400">Nasıl Kullanılır</a></li>
+          <li><a href="#faq" class="hover:text-cyan-400">SSS</a></li>
+          <li><a href="#privacy" class="hover:text-cyan-400">Gizlilik</a></li>
+        </ul>
       </div>
     </div>
+    <div class="text-center text-gray-500 mt-8">© 2024 TikDownloader</div>
   </footer>
-
-  <script>
-    function scrollToDownload(){document.getElementById('download').scrollIntoView({behavior:'smooth'})}
-
-    function isValidTikTokUrl(url){
-      const ps=[/^https?:\/\/(www\.)?(tiktok\.com|vm\.tiktok\.com|m\.tiktok\.com)/i,/^https?:\/\/(www\.)?vt\.tiktok\.com/i];
-      return ps.some(p=>p.test(url));
-    }
-
-    // Güvenlik: metin ve URL kaçışı
-    function esc(t){return String(t).replace(/[&<>"']/g, s=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[s]))}
-    function isHttpUrl(u){return /^https?:\/\//i.test(u)}
-
-    async function downloadVideo(){
-      const url=document.getElementById('videoUrl').value.trim();
-      const resultDiv=document.getElementById('result');
-      const btn=document.getElementById('downloadBtn');
-
-      if(!url){showError('Lütfen TikTok video linkini girin!');return;}
-      if(!isValidTikTokUrl(url)){showError('Geçerli bir TikTok linki girin!');return;}
-
-      btn.innerHTML='<div class="loading-tiktok mr-3"></div><span>Video İşleniyor...</span>';
-      btn.disabled=true; resultDiv.innerHTML='';
-
-      try{
-        const r=await fetch('/api/tiktok?url='+encodeURIComponent(url));
-        const data=await r.json();
-
-        if(!r.ok || !data.ok){showError(data.error||'Video indirilemedi');return;}
-        showSuccess(data);
-      }catch(e){
-        showError('Bir hata oluştu: '+e.message);
-      }finally{
-        btn.innerHTML='<i class="fas fa-rocket text-2xl mr-3"></i><span>Video İndir</span>';
-        btn.disabled=false;
-      }
-    }
-
-    function showSuccess(data){
-      const resultDiv=document.getElementById('result');
-      const title=esc(data.title||'TikTok Video');
-      const cover=isHttpUrl(data.cover||'') ? data.cover : '';
-      const noWM=data.noWatermark||null;
-      const WM=data.watermark||null;
-      const music=data.music||null;
-
-      let html=`
-        <div class="success-pulse bg-gradient-to-br from-green-500/20 to-cyan-500/20 border-2 border-green-400 rounded-2xl p-8 mt-8">
-          <div class="flex items-center mb-6">
-            <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mr-6 glow-cyan">
-              <i class="fas fa-check-circle text-white text-2xl"></i>
-            </div>
-            <div>
-              <h4 class="text-2xl font-bold text-white">Video Hazır! 🎉</h4>
-              <p class="text-green-300 text-lg">Watermark yok destekleniyorsa otomatik gösterilir</p>
-            </div>
-          </div>
-          ${cover?`<div class="bg-black/50 rounded-xl p-4 mb-6"><img src="${cover}" alt="Video thumbnail" class="w-full max-h-48 object-contain rounded-lg"></div>`:''}
-          <div class="bg-black/30 rounded-xl p-4 mb-6">
-            <p class="text-white font-semibold text-lg mb-2">${title}</p>
-            <div class="flex flex-wrap items-center gap-2 text-sm">
-              <span class="bg-red-500 text-white px-3 py-1 rounded-full"><i class="fas fa-hd-video mr-1"></i>HD</span>
-              <span class="bg-cyan-400 text-black px-3 py-1 rounded-full"><i class="fas fa-magic mr-1"></i>Watermark Yok</span>
-              <span class="bg-green-500 text-white px-3 py-1 rounded-full"><i class="fas fa-bolt mr-1"></i>Hızlı</span>
-            </div>
-          </div>
-      `;
-
-      if(noWM){ html+=`<a href="/api/download?url=${encodeURIComponent(noWM)}" class="btn-tiktok inline-flex items-center justify-center space-x-4 text-white px-8 py-5 rounded-2xl font-bold text-xl w-full glow-tiktok"><i class="fas fa-download text-2xl"></i><span>Filigransız İndir</span></a>`;}
-      if(WM){ html+=`<a href="/api/download?url=${encodeURIComponent(WM)}" class="mt-3 bg-white/10 border border-gray-600 hover:bg-white/20 transition inline-flex items-center justify-center space-x-4 text-white px-8 py-5 rounded-2xl font-bold text-xl w-full"><i class="fas fa-download text-2xl"></i><span>Filigranlı İndir</span></a>`;}
-      if(music){ html+=`<a href="/api/download?url=${encodeURIComponent(music)}" class="mt-3 bg-white/10 border border-gray-600 hover:bg-white/20 transition inline-flex items-center justify-center space-x-4 text-white px-8 py-5 rounded-2xl font-bold text-xl w-full"><i class="fas fa-music text-2xl"></i><span>Müziği İndir</span></a>`;}
-
-      html+='</div>';
-      resultDiv.innerHTML=html;
-    }
-
-    function showError(msg){
-      document.getElementById('result').innerHTML=
-        `<div class="bg-gradient-to-br from-red-500/20 to-pink-500/20 border-2 border-red-400 rounded-2xl p-8 mt-8">
-          <div class="flex items-center">
-            <div class="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center mr-6">
-              <i class="fas fa-exclamation-triangle text-white text-2xl"></i>
-            </div>
-            <div>
-              <h4 class="text-xl font-bold text-white mb-2">Oops! Bir Sorun Var</h4>
-              <p class="text-red-300 text-lg whitespace-pre-line">${esc(msg)}</p>
-            </div>
-          </div>
-        </div>`;
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        e.preventDefault();
-        const t=document.querySelector(a.getAttribute('href'));
-        if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-      });
-    });
-    document.getElementById('videoUrl').addEventListener('keypress',e=>{ if(e.key==='Enter'){ downloadVideo(); }});
-    document.getElementById('videoUrl').addEventListener('input',()=>{ const r=document.getElementById('result'); if(r.innerHTML) r.innerHTML=''; });
-    window.addEventListener('load',()=>document.getElementById('videoUrl').focus());
-  </script>
 </body>
 </html>
